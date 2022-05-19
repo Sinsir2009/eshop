@@ -11,7 +11,7 @@
 									<div class="panel panel-default">
                                     <div class="panel-heading">
                                         <h4 class="panel-title">
-											<a href="/category/<?php echo $categoryItem['id']; ?>" class="<?php if ($categoryId == $categoryItem['id']) echo 'active'; ?>">
+											<a href="/category/<?php echo $categoryItem['id']; ?>" class="<?php if ($categoryItem['id'] == $product['category_id']) echo 'active'; ?>">
 												<?php echo $categoryItem['name']; ?>
 											</a>
 										</h4>
@@ -45,7 +45,9 @@
                                                 В корзину
                                             </button>
                                         </span>
-                                        <p><b>Наличие:</b> На складе</p>
+                                        <p><b>Наличие:</b> <?php if($product['availiability'] == 1): ?> На складе</p>
+										<?php else: ?> Нет в наличии
+										<?php endif; ?>
                                         <p><b>Состояние:</b> Новое</p>
                                         <p><b>Производитель:</b> <?php echo $product['brand']; ?></p>
                                     </div><!--/product-information-->
